@@ -1,0 +1,17 @@
+Aplicativo para organização de tarefas acadêmicas
+
+- Telas:
+C1 - Cadastro das disciplinas
+C2 - Cadastro das tarefas associadas à alguma disciplinas
+V1 - Visualização das disciplinas
+V2 - Visualização das tarefas para cada disciplina
+
+- Atributos das telas:
+C1 - Nome da disciplina; Período letivo; Nome do professor; Imagem de background (opcional); Descrição da disciplina; 
+C2 - Título; Descrição; Status (Feito, Pendente); Prazo; Axexar arquivos
+
+-Navegabilidade:
+
+	     
+:INICIO: V1 --> V2 --> C2 --> :FIM:
+	    --> C1 --> :FIM:
