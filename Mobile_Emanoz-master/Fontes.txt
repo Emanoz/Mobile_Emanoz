@@ -1,0 +1,36 @@
+- Primary color: #B91BFB
+- Título da AppBar: 
+	- font: Segoe UI 
+	- font size: 24 
+	- font wight: bold
+
+- Texto padrão da body da tela de Dashboard: 
+	- font Segoe UI 
+	- font size: 18 
+	- font wight: regular
+
+- Texto padrão da body da tela de CardTarefaItem
+	** Título
+	- font Segoe UI 
+	- font size: 16 
+	- font wight: regular
+	
+	** Subtítulo
+	- font Segoe UI 
+	- font size: 14 
+	- font wight: regular
+
+	** Botões
+	- font Segoe UI 
+	- font size: 16 
+	- font wight: bold
+ 	- Cor "VISUALIZAR ANEXOS" e "FEITO": #2AB7F6
+	- Cor "EXCLUIR": #FE0000
+
+- Texto padrão do PopUp
+	- font Segoe UI 
+	- font size: 18 
+	- font wight: regular
+	- Cor "Aviso!" e "EXCLUIR": #FE0000
+	- Cor: "CANCELAR": #2AB7F6
+
