@@ -1,5 +1,7 @@
 import 'package:agenda_estudante/enums/Status.dart';
 import 'package:agenda_estudante/model/Tarefa.dart';
+import 'package:agenda_estudante/view/tarefa/CardTarefa.dart';
+import 'package:agenda_estudante/view/tarefa/CardTarefaAnexo.dart';
 import 'package:flutter/material.dart';
 
 class CardTarefaItem extends StatelessWidget {
@@ -33,7 +35,8 @@ class CardTarefaItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextButton(
-                onPressed: () {},
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CardTarefaAnexo())),
                 child: Text(
                   'VISUALIZAR ANEXOS',
                   style: TextStyle(
