@@ -1,3 +1,4 @@
+import 'package:agenda_estudante/components/DefaultTextStyles.dart';
 import 'package:agenda_estudante/model/Disciplina.dart';
 import 'package:agenda_estudante/view/tarefa/CardTarefa.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +27,14 @@ class CardDisciplina extends StatelessWidget {
                 margin: EdgeInsets.all(4),
                 child: Row(
                   children: [
-                    Text(disciplina.titulo),
-                    Text(disciplina.periodo),
+                    Text(
+                      disciplina.titulo,
+                      style: DefaultTextStyles.cardStyle(),
+                    ),
+                    Text(
+                      disciplina.periodo,
+                      style: DefaultTextStyles.cardStyle(),
+                    ),
                   ],
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 ),
@@ -42,7 +49,10 @@ class CardDisciplina extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 4),
-                child: Text(disciplina.professor),
+                child: Text(
+                  disciplina.professor,
+                  style: DefaultTextStyles.cardStyle(),
+                ),
               ),
             ],
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

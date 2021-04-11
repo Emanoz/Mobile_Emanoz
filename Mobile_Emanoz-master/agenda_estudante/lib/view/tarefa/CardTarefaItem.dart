@@ -1,6 +1,6 @@
+import 'package:agenda_estudante/components/DefaultTextStyles.dart';
 import 'package:agenda_estudante/enums/Status.dart';
 import 'package:agenda_estudante/model/Tarefa.dart';
-import 'package:agenda_estudante/view/tarefa/CardTarefa.dart';
 import 'package:agenda_estudante/view/tarefa/CardTarefaAnexo.dart';
 import 'package:flutter/material.dart';
 
@@ -27,8 +27,14 @@ class CardTarefaItem extends StatelessWidget {
                     color: Colors.black,
                     size: 30,
                   ),
-            title: Text(tarefa.titulo),
-            subtitle: Text(tarefa.descricao),
+            title: Text(
+              tarefa.titulo,
+              style: DefaultTextStyles.cardTitleStyle(),
+            ),
+            subtitle: Text(
+              tarefa.descricao,
+              style: DefaultTextStyles.cardSubtitleStyle(),
+            ),
             minVerticalPadding: 20,
           ),
           Row(
@@ -37,13 +43,8 @@ class CardTarefaItem extends StatelessWidget {
               TextButton(
                 onPressed: () => Navigator.push(context,
                     MaterialPageRoute(builder: (context) => CardTarefaAnexo())),
-                child: Text(
-                  'VISUALIZAR ANEXOS',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                ),
+                child: Text('VISUALIZAR ANEXOS',
+                    style: DefaultTextStyles.cardButtonStyle()),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -52,21 +53,15 @@ class CardTarefaItem extends StatelessWidget {
                     onPressed: () {},
                     child: Text(
                       'FEITO',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
+                      style: DefaultTextStyles.cardButtonStyle(),
                     ),
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Text(
                       'EXCLUIR',
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
+                      style:
+                          DefaultTextStyles.cardButtonStyle(color: Colors.red),
                     ),
                   ),
                 ],

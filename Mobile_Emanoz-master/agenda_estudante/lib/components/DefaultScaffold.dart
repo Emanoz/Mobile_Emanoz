@@ -1,3 +1,4 @@
+import 'package:agenda_estudante/components/DefaultTextStyles.dart';
 import 'package:flutter/material.dart';
 
 class DefaultScaffold extends StatelessWidget {
@@ -31,7 +32,10 @@ class DefaultScaffold extends StatelessWidget {
                 onPressed: () => Navigator.pop(context),
               )
             : appBarLeadingIcon,
-        title: Text(appBarTitle),
+        title: Text(
+          appBarTitle,
+          style: DefaultTextStyles.appbarStyle(),
+        ),
         actions: fabActions,
       ),
       body: body,
