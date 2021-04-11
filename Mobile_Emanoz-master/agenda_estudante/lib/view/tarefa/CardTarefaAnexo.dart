@@ -1,8 +1,14 @@
+import 'package:agenda_estudante/components/DefaultTextStyles.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/DefaultScaffold.dart';
 
-class CardTarefaAnexo extends StatelessWidget {
+class CardTarefaAnexo extends StatefulWidget {
+  @override
+  _CardTarefaAnexoState createState() => _CardTarefaAnexoState();
+}
+
+class _CardTarefaAnexoState extends State<CardTarefaAnexo> {
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
@@ -15,12 +21,14 @@ class CardTarefaAnexo extends StatelessWidget {
           mainAxisSpacing: 20,
           crossAxisSpacing: 20,
           children: [
-            item(),
-            item(),
-            item(),
-            item(),
-            item(),
-            item(),
+            _item(context),
+            _item(context),
+            _item(context),
+            _item(context),
+            _item(context),
+            _item(context),
+            _item(context),
+            _item(context),
           ],
         ),
       ),
@@ -28,11 +36,57 @@ class CardTarefaAnexo extends StatelessWidget {
   }
 }
 
-Widget item() {
-  return Image.asset(
-    'assets/cao.jpg',
-    //semanticLabel: disciplina.titulo,
-    fit: BoxFit.cover,
-    width: double.infinity,
+Future<Widget> _showAlertDialog(BuildContext context) {
+  return showDialog(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        elevation: 5,
+        titleTextStyle:
+            DefaultTextStyles.popUpStyle(color: Colors.red, isBold: true),
+        contentTextStyle: DefaultTextStyles.popUpStyle(color: Colors.black),
+        title: Center(
+          child: Text('Aviso!'),
+        ),
+        content: Text('Têm certeza que deseja excluir esse anexo?'),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              'CANCELAR',
+              style: DefaultTextStyles.popUpStyle(color: Colors.blue),
+            ),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              'DOWNLOAD',
+              style: DefaultTextStyles.popUpStyle(color: Colors.blue),
+            ),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              'EXCLUIR',
+              style: DefaultTextStyles.popUpStyle(color: Colors.red),
+            ),
+          ),
+        ],
+      );
+    },
+  );
+}
+
+Widget _item(BuildContext context) {
+  return Container(
+    child: GestureDetector(
+      onTap: () async => await _showAlertDialog(context),
+      child: Image.asset(
+        'assets/cao.jpg',
+        //semanticLabel: disciplina.titulo,
+        fit: BoxFit.cover,
+        width: double.infinity,
+      ),
+    ),
   );
 }
