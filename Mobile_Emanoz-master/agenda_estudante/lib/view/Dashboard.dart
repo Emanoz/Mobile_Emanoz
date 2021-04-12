@@ -9,7 +9,7 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     // Disciplina de exemplo
     Disciplina disciplina = Disciplina(
-        titulo: 'Cálculo',
+        titulo: 'Cálculo I',
         periodo: '7º semestre',
         professor: 'Lúcia Maria da Silva',
         imagem: 'calculus.jpg');
