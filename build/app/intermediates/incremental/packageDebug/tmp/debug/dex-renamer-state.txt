@@ -1,0 +1,4 @@
+#Sun Apr 11 17:33:23 BRT 2021
+base.0=/home/emanoz/Desktop/Mobile/Mobile_Emanoz-master/agenda_estudante/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
