@@ -21,7 +21,7 @@
     },
     {
       "name": "async",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.5.0",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.6.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -321,7 +321,7 @@
     },
     {
       "name": "source_span",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.0",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -357,7 +357,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.19",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -404,7 +404,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-04-13T00:09:58.734393Z",
+  "generated": "2021-05-22T21:58:36.125405Z",
   "generator": "pub",
-  "generatorVersion": "2.12.2"
+  "generatorVersion": "2.13.0"
 }
