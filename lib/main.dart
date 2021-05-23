@@ -1,4 +1,4 @@
-import 'package:agenda_estudante/view/Dashboard.dart';
+import 'package:agenda_estudante/view/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
