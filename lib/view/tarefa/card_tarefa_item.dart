@@ -20,7 +20,6 @@ class CardTarefaItem extends StatefulWidget {
 class _CardTarefaItemState extends State<CardTarefaItem> {
   @override
   void initState() {
-    // TODO: implement initState
     widget.controller.findAllByDisciplina(widget.tarefa.idDisciplina);
     super.initState();
   }

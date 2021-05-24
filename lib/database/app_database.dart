@@ -1,3 +1,4 @@
+import 'package:agenda_estudante/database/dao/arquivo_dao.dart';
 import 'package:agenda_estudante/database/dao/disciplina_dao.dart';
 import 'package:agenda_estudante/database/dao/tarefa_dao.dart';
 import 'package:path/path.dart';
@@ -10,6 +11,7 @@ Future<Database> getDatabase() async {
     onCreate: (db, version) {
       db.execute(DisciplinaDao.createTable);
       db.execute(TarefaDao.createTable);
+      db.execute(ArquivoDao.createTable);
     },
     onConfigure: (db) {
       db.execute('PRAGMA foreign_keys = ON');

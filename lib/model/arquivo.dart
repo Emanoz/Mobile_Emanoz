@@ -1,6 +1,7 @@
 class Arquivo {
   final int idArquivo;
-  final String descricao;
+  final String caminho;
+  final int idTarefa;
 
-  Arquivo(this.idArquivo, this.descricao);
+  Arquivo(this.idArquivo, this.caminho, this.idTarefa);
 }
