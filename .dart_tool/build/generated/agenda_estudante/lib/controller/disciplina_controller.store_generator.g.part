@@ -9,13 +9,13 @@ mixin _$DisciplinaController on _DisciplinaController, Store {
       Atom(name: '_DisciplinaController.listDisciplina');
 
   @override
-  List<Disciplina> get listDisciplina {
+  ObservableList<Disciplina> get listDisciplina {
     _$listDisciplinaAtom.reportRead();
     return super.listDisciplina;
   }
 
   @override
-  set listDisciplina(List<Disciplina> value) {
+  set listDisciplina(ObservableList<Disciplina> value) {
     _$listDisciplinaAtom.reportWrite(value, super.listDisciplina, () {
       super.listDisciplina = value;
     });
@@ -24,7 +24,7 @@ mixin _$DisciplinaController on _DisciplinaController, Store {
   final _$findAllAsyncAction = AsyncAction('_DisciplinaController.findAll');
 
   @override
-  Future<List<Disciplina>> findAll() {
+  Future<void> findAll() {
     return _$findAllAsyncAction.run(() => super.findAll());
   }
 

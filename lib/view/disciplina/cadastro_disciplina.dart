@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 class CadastroDisciplina extends StatefulWidget {
+  final DateTimeController dateTimeController = DateTimeController();
+  final DisciplinaController disciplinaController = DisciplinaController();
+
   @override
   _CadastroDisciplinaState createState() => _CadastroDisciplinaState();
 }
 
 class _CadastroDisciplinaState extends State<CadastroDisciplina> {
-  final DateTimeController dateTimeController = DateTimeController();
-  final DisciplinaController disciplinaController = DisciplinaController();
-
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
@@ -23,7 +23,7 @@ class _CadastroDisciplinaState extends State<CadastroDisciplina> {
         IconButton(
             icon: Icon(Icons.send),
             onPressed: () async {
-              await disciplinaController.insert();
+              await widget.disciplinaController.insert();
               Navigator.pop(context);
               return;
             }),
@@ -37,28 +37,29 @@ class _CadastroDisciplinaState extends State<CadastroDisciplina> {
                 DefaultTextField(
                   labelText: 'Disciplina',
                   hintText: 'Cálculo III',
-                  controller: disciplinaController.titulo,
+                  controller: widget.disciplinaController.titulo,
                 ),
                 Observer(
                   builder: (context) => DefaultTextField(
                     labelText: 'Período',
                     hintText: '',
                     onTap: () async {
-                      await dateTimeController.dateTimeSelection(context);
-                      disciplinaController.periodo.text =
-                          dateTimeController.datetime.toString();
+                      await widget.dateTimeController
+                          .dateTimeSelection(context);
+                      widget.disciplinaController.periodo.text =
+                          widget.dateTimeController.datetime.toString();
                     },
                     maxLength: 23,
-                    controller: disciplinaController.periodo,
+                    controller: widget.disciplinaController.periodo,
                   ),
                 ),
                 DefaultTextField(
                     labelText: 'Professor',
                     hintText: 'Lucas Silva',
-                    controller: disciplinaController.professor),
+                    controller: widget.disciplinaController.professor),
                 DefaultTextField(
                   labelText: 'Descrição',
-                  controller: disciplinaController.descricao,
+                  controller: widget.disciplinaController.descricao,
                   hintText: '',
                   maxLength: 200,
                   maxLines: 7,

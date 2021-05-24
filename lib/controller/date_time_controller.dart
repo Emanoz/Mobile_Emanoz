@@ -6,6 +6,8 @@ part 'date_time_controller.g.dart';
 class DateTimeController = _DateTimeController with _$DateTimeController;
 
 abstract class _DateTimeController with Store {
+  TextEditingController datetimeController = TextEditingController();
+
   @observable
   DateTime datetime = DateTime.now();
 

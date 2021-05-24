@@ -1,22 +1,23 @@
 import 'package:agenda_estudante/components/default_scaffold.dart';
 import 'package:agenda_estudante/controller/disciplina_controller.dart';
+import 'package:agenda_estudante/model/disciplina.dart';
 import 'package:agenda_estudante/view/disciplina/cadastro_disciplina.dart';
 import 'package:agenda_estudante/view/disciplina/card_disciplina.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 class Dashboard extends StatefulWidget {
+  final DisciplinaController controller = DisciplinaController();
+
   @override
   _DashboardState createState() => _DashboardState();
 }
 
 class _DashboardState extends State<Dashboard> {
-  final DisciplinaController controller = DisciplinaController();
-
   @override
   void initState() {
     super.initState();
-    controller.findAll();
+    widget.controller.findAll();
   }
 
   @override
@@ -25,18 +26,14 @@ class _DashboardState extends State<Dashboard> {
       appBarTitle: 'Dashboard',
       appBarLeadingIcon: Icon(Icons.home),
       body: Observer(
-        builder: (context) {
-          return ListView(
-            children: [
-              Column(
-                children: List.generate(
-                    controller.listDisciplina.length,
-                    (index) =>
-                        CardDisciplina(controller.listDisciplina[index])),
-                crossAxisAlignment: CrossAxisAlignment.center,
-              ),
-            ],
-          );
+        builder: (_) {
+          return ListView.builder(
+              itemCount: widget.controller.listDisciplina.length,
+              itemBuilder: (_, index) {
+                var list = widget.controller.listDisciplina;
+                Disciplina disciplina = list[index];
+                return CardDisciplina(disciplina);
+              });
         },
       ),
       fabIcon: Icon(

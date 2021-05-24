@@ -1,5 +1,4 @@
 import 'package:agenda_estudante/database/dao/disciplina_dao.dart';
-import 'package:agenda_estudante/model/arquivo.dart';
 import 'package:agenda_estudante/model/disciplina.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
@@ -18,12 +17,12 @@ abstract class _DisciplinaController with Store {
   final DisciplinaDao dao = DisciplinaDao();
 
   @observable
-  List<Disciplina> listDisciplina;
+  ObservableList<Disciplina> listDisciplina = ObservableList();
 
   @action
-  Future<List<Disciplina>> findAll() async {
-    listDisciplina = await dao.findAll();
-    return listDisciplina;
+  Future<void> findAll() async {
+    List<Disciplina> list = await dao.findAll();
+    listDisciplina = ObservableList.of(list);
   }
 
   @action

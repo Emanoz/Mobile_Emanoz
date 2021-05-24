@@ -1,45 +1,52 @@
 import 'package:agenda_estudante/components/default_scaffold.dart';
+import 'package:agenda_estudante/controller/tarefa_controller.dart';
+import 'package:agenda_estudante/model/disciplina.dart';
 import 'package:agenda_estudante/model/tarefa.dart';
 import 'package:agenda_estudante/view/tarefa/cadastro_tarefa.dart';
 import 'package:agenda_estudante/view/tarefa/card_tarefa_item.dart';
 import 'package:flutter/material.dart';
-import 'package:agenda_estudante/enums/status.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
-class CardTarefa extends StatelessWidget {
+class CardTarefa extends StatefulWidget {
+  final Disciplina disciplina;
+  final TarefaController controller = TarefaController();
+
+  CardTarefa(this.disciplina);
+
+  @override
+  _CardTarefaState createState() => _CardTarefaState();
+}
+
+class _CardTarefaState extends State<CardTarefa> {
+  @override
+  void initState() {
+    super.initState();
+    widget.controller.findAllByDisciplina(widget.disciplina.idDisciplina);
+  }
+
   @override
   Widget build(BuildContext context) {
-    // Exemplo de tarefa PENDENTE
-    Tarefa tarefa1 = Tarefa(
-        titulo: 'AC1 - Relatório dobre Microcontroladores',
-        descricao: 'Terminar a introdução e executar a simulação pelo Proteus',
-        status: Status.PENDENTE);
-    // Exemplo de tarefa CONCLUÍDA
-    Tarefa tarefa2 = Tarefa(
-        titulo: 'AC1 - Relatório dobre Microcontroladores',
-        descricao: 'Terminar a introdução e executar a simulação pelo Proteus',
-        status: Status.CONCLUIDO);
-
     return DefaultScaffold(
-      appBarTitle: 'Cálculo',
+      appBarTitle: widget.disciplina.titulo,
       fabNavigation: () => Navigator.push(
-          context, MaterialPageRoute(builder: (context) => CadastroTarefa())),
+          context,
+          MaterialPageRoute(
+              builder: (context) =>
+                  CadastroTarefa(widget.disciplina.idDisciplina))),
       fabIcon: Icon(
         Icons.add,
         size: 50,
       ),
-      body: ListView(
-        children: [
-          Column(
-            children: [
-              // Exemplos de tarefas que serão mostradas após o back ser implementado
-              CardTarefaItem(tarefa1),
-              CardTarefaItem(tarefa1),
-              CardTarefaItem(tarefa2),
-              CardTarefaItem(tarefa2),
-              CardTarefaItem(tarefa1),
-            ],
-          )
-        ],
+      body: Observer(
+        builder: (context) {
+          return ListView.builder(
+            itemCount: widget.controller.listTarefa.length,
+            itemBuilder: (_, index) {
+              Tarefa tarefa = widget.controller.listTarefa[index];
+              return CardTarefaItem(tarefa);
+            },
+          );
+        },
       ),
     );
   }

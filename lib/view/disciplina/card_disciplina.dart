@@ -13,8 +13,8 @@ class CardDisciplina extends StatelessWidget {
     return Material(
       child: InkWell(
         splashColor: Colors.white,
-        onTap: () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => CardTarefa())),
+        onTap: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => CardTarefa(disciplina))),
         child: Container(
           padding: EdgeInsets.only(top: 4, bottom: 4),
           margin: EdgeInsets.all(24),

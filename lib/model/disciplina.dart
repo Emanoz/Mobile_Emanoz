@@ -1,5 +1,3 @@
-import 'package:agenda_estudante/model/arquivo.dart';
-
 class Disciplina {
   final int idDisciplina;
   final String titulo;

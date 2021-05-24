@@ -15,7 +15,7 @@
     },
     {
       "name": "args",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/args-2.0.0",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/args-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -75,7 +75,7 @@
     },
     {
       "name": "built_value",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/built_value-8.0.4",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/built_value-8.0.6",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -135,7 +135,7 @@
     },
     {
       "name": "cupertino_icons",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.2",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -159,7 +159,7 @@
     },
     {
       "name": "file",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.0",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -351,7 +351,7 @@
     },
     {
       "name": "shelf",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shelf-1.1.0",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shelf-1.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -488,7 +488,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-05-23T15:45:40.417017Z",
+  "generated": "2021-05-23T23:32:46.683187Z",
   "generator": "pub",
   "generatorVersion": "2.13.0"
 }

@@ -3,7 +3,7 @@ import 'package:agenda_estudante/model/disciplina.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DisciplinaDao {
-  static String createTable =
+  static const String createTable =
       '''CREATE TABLE disciplina (id_disciplina INTEGER PRIMARY KEY, 
           titulo TEXT,
           periodo TEXT,
@@ -14,8 +14,8 @@ class DisciplinaDao {
   Future<List<Disciplina>> findAll() async {
     final Database db = await getDatabase();
     final List<Map<String, dynamic>> result = await db.query('disciplina');
-    List<Disciplina> contacts = _toList(result);
-    return contacts;
+    List<Disciplina> disciplinas = _toList(result);
+    return disciplinas;
   }
 
   Future<int> insert(Disciplina disciplina) async {
