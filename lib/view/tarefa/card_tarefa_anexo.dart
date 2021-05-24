@@ -1,36 +1,62 @@
+import 'dart:io';
 import 'package:agenda_estudante/components/default_text_styles.dart';
+import 'package:agenda_estudante/controller/arquivo_controller.dart';
+import 'package:agenda_estudante/model/tarefa.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../components/default_scaffold.dart';
 
+final ArquivoController controller = ArquivoController();
+
 class CardTarefaAnexo extends StatefulWidget {
+  final Tarefa tarefa;
+
+  CardTarefaAnexo(this.tarefa) {
+    controller.idTarefa = tarefa.idTarefa;
+  }
+
   @override
   _CardTarefaAnexoState createState() => _CardTarefaAnexoState();
 }
 
 class _CardTarefaAnexoState extends State<CardTarefaAnexo> {
   @override
+  void initState() {
+    controller.findAllByTarefa(widget.tarefa.idTarefa);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
       appBarTitle: 'Anexos',
-      hasFab: false,
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: GridView.count(
-          crossAxisCount: 2,
-          mainAxisSpacing: 20,
-          crossAxisSpacing: 20,
-          children: [
-            _item(context),
-            _item(context),
-            _item(context),
-            _item(context),
-            _item(context),
-            _item(context),
-            _item(context),
-            _item(context),
-          ],
-        ),
+      hasFab: true,
+      fabNavigation: () async {
+        controller.imagem = await ImagePicker.pickImage(
+            source: ImageSource.gallery, imageQuality: 50);
+        await controller.insert();
+      },
+      fabIcon: Icon(
+        Icons.add,
+        size: 50,
+      ),
+      body: Observer(
+        builder: (context) {
+          return Padding(
+            padding: const EdgeInsets.all(20),
+            child: GridView.count(
+              crossAxisCount: 2,
+              mainAxisSpacing: 20,
+              crossAxisSpacing: 20,
+              children: List.generate(controller.listArquivos.length, (index) {
+                return _item(
+                    context, File(controller.listArquivos[index].imagem));
+              }),
+            ),
+          );
+        },
       ),
     );
   }
@@ -77,16 +103,15 @@ Future<Widget> _showAlertDialog(BuildContext context) {
   );
 }
 
-Widget _item(BuildContext context) {
+Widget _item(BuildContext context, File imagem) {
   return Container(
-    child: GestureDetector(
-      onTap: () async => await _showAlertDialog(context),
-      child: Image.asset(
-        'assets/cao.jpg',
-        //semanticLabel: disciplina.titulo,
-        fit: BoxFit.cover,
-        width: double.infinity,
-      ),
+      child: GestureDetector(
+    onTap: () async => await _showAlertDialog(context),
+    child: Image.file(
+      imagem,
+      //semanticLabel: disciplina.titulo,
+      fit: BoxFit.cover,
+      width: double.infinity,
     ),
-  );
+  ));
 }

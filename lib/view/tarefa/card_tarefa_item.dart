@@ -60,7 +60,8 @@ class _CardTarefaItemState extends State<CardTarefaItem> {
                   onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => CardTarefaAnexo())),
+                          builder: (context) =>
+                              CardTarefaAnexo(widget.tarefa))),
                   child: Text('VISUALIZAR ANEXOS',
                       style: DefaultTextStyles.cardButtonStyle()),
                 ),

@@ -182,6 +182,12 @@
       "languageVersion": "2.7"
     },
     {
+      "name": "flutter_plugin_android_lifecycle",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -210,6 +216,18 @@
       "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "image_picker",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.6+5",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "image_picker_platform_interface",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "io",
@@ -297,7 +315,7 @@
     },
     {
       "name": "path_provider_platform_interface",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-2.0.1",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -321,9 +339,9 @@
     },
     {
       "name": "plugin_platform_interface",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.0",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-1.0.3",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.1"
     },
     {
       "name": "pool",
@@ -488,7 +506,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-05-23T23:32:46.683187Z",
+  "generated": "2021-05-24T22:00:46.024725Z",
   "generator": "pub",
   "generatorVersion": "2.13.0"
 }

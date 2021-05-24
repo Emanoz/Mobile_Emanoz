@@ -5,7 +5,7 @@ import 'package:sqflite/sqflite.dart';
 class ArquivoDao {
   static const String createTable =
       ''' CREATE TABLE arquivo (id_arquivo INTEGER PRIMARY KEY,
-                      caminho TEXT,
+                      arquivo TEXT,
                       id_tarefa INTEGER,
                       FOREIGN KEY (id_tarefa)
                       REFERENCES tarefa (id_tarefa)
@@ -41,7 +41,7 @@ class ArquivoDao {
   Map<String, dynamic> _toMap(Arquivo arquivo) {
     final Map<String, dynamic> arquivoMap = Map();
     arquivoMap['id_arquivo'] = arquivo.idArquivo;
-    arquivoMap['caminho'] = arquivo.caminho;
+    arquivoMap['arquivo'] = arquivo.imagem;
     arquivoMap['id_tarefa'] = arquivo.idTarefa;
 
     return arquivoMap;
@@ -52,7 +52,7 @@ class ArquivoDao {
     for (Map<String, dynamic> row in result) {
       final Arquivo arquivo = Arquivo(
         row['id_arquivo'],
-        row['caminho'],
+        row['arquivo'],
         row['id_tarefa'],
       );
       arquivos.add(arquivo);

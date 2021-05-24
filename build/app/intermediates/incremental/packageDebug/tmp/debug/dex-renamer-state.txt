@@ -1,4 +1,4 @@
-#Sun May 23 22:26:37 BRT 2021
+#Mon May 24 19:55:46 BRT 2021
 base.0=/home/emanoz/Desktop/Mobile/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
