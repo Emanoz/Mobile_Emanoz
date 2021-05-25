@@ -39,8 +39,8 @@ mixin _$ArquivoController on _ArquivoController, Store {
   final _$deleteAsyncAction = AsyncAction('_ArquivoController.delete');
 
   @override
-  Future<int> delete(Arquivo arquivo) {
-    return _$deleteAsyncAction.run(() => super.delete(arquivo));
+  Future<int> delete(int idArquivo) {
+    return _$deleteAsyncAction.run(() => super.delete(idArquivo));
   }
 
   final _$updateAsyncAction = AsyncAction('_ArquivoController.update');

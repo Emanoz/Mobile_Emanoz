@@ -10,6 +10,7 @@ class ArquivoController = _ArquivoController with _$ArquivoController;
 
 abstract class _ArquivoController with Store {
   int idTarefa = 0;
+  int idArquivo = 0;
 
   final ArquivoDao dao = ArquivoDao();
 
@@ -20,6 +21,7 @@ abstract class _ArquivoController with Store {
 
   @action
   Future<void> findAllByTarefa(int idTarefa) async {
+    listArquivos.clear();
     listArquivos.addAll(await dao.findAllByTarefaID(idTarefa));
   }
 
@@ -32,9 +34,9 @@ abstract class _ArquivoController with Store {
   }
 
   @action
-  Future<int> delete(Arquivo arquivo) async {
-    int result = await dao.delete(arquivo.idArquivo);
-    await findAllByTarefa(arquivo.idTarefa);
+  Future<int> delete(int idArquivo) async {
+    int result = await dao.delete(idArquivo);
+    await findAllByTarefa(idTarefa);
     return result;
   }
 

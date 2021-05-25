@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:agenda_estudante/components/default_text_styles.dart';
 import 'package:agenda_estudante/controller/arquivo_controller.dart';
+import 'package:agenda_estudante/model/arquivo.dart';
 import 'package:agenda_estudante/model/tarefa.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -51,8 +52,7 @@ class _CardTarefaAnexoState extends State<CardTarefaAnexo> {
               mainAxisSpacing: 20,
               crossAxisSpacing: 20,
               children: List.generate(controller.listArquivos.length, (index) {
-                return _item(
-                    context, File(controller.listArquivos[index].imagem));
+                return _item(context, controller.listArquivos[index]);
               }),
             ),
           );
@@ -62,7 +62,7 @@ class _CardTarefaAnexoState extends State<CardTarefaAnexo> {
   }
 }
 
-Future<Widget> _showAlertDialog(BuildContext context) {
+Future<Widget> _showAlertDialog(BuildContext context, int idArquivo) {
   return showDialog(
     context: context,
     builder: (context) {
@@ -77,21 +77,19 @@ Future<Widget> _showAlertDialog(BuildContext context) {
         content: Text('Têm certeza que deseja excluir esse anexo?'),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             child: Text(
               'CANCELAR',
               style: DefaultTextStyles.popUpStyle(color: Colors.blue),
             ),
           ),
           TextButton(
-            onPressed: () {},
-            child: Text(
-              'DOWNLOAD',
-              style: DefaultTextStyles.popUpStyle(color: Colors.blue),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
+            onPressed: () {
+              controller.delete(idArquivo);
+              Navigator.pop(context);
+            },
             child: Text(
               'EXCLUIR',
               style: DefaultTextStyles.popUpStyle(color: Colors.red),
@@ -103,12 +101,12 @@ Future<Widget> _showAlertDialog(BuildContext context) {
   );
 }
 
-Widget _item(BuildContext context, File imagem) {
+Widget _item(BuildContext context, Arquivo arquivo) {
   return Container(
       child: GestureDetector(
-    onTap: () async => await _showAlertDialog(context),
+    onTap: () async => await _showAlertDialog(context, arquivo.idArquivo),
     child: Image.file(
-      imagem,
+      File(arquivo.imagem),
       //semanticLabel: disciplina.titulo,
       fit: BoxFit.cover,
       width: double.infinity,
