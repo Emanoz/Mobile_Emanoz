@@ -4,6 +4,7 @@ import 'package:agenda_estudante/controller/date_time_controller.dart';
 import 'package:agenda_estudante/controller/disciplina_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:image_picker/image_picker.dart';
 
 class CadastroDisciplina extends StatefulWidget {
   final DateTimeController dateTimeController = DateTimeController();
@@ -63,6 +64,34 @@ class _CadastroDisciplinaState extends State<CadastroDisciplina> {
                   hintText: '',
                   maxLength: 200,
                   maxLines: 7,
+                ),
+                TextButton(
+                  onPressed: () async {
+                    widget.disciplinaController.updateImagem(
+                        await ImagePicker.pickImage(
+                            source: ImageSource.gallery, imageQuality: 50));
+                  },
+                  child: Text(
+                    "Selecionar imagem",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                Observer(
+                  builder: (context) {
+                    return Container(
+                      margin: EdgeInsets.all(16.0),
+                      child: Image.file(
+                        widget.disciplinaController.imagem,
+                        fit: BoxFit.cover,
+                        width: double.infinity,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Image.network(
+                              "https://cdn.neemo.com.br/uploads/settings_webdelivery/logo/3136/image-not-found.jpg");
+                        },
+                      ),
+                      height: 150,
+                    );
+                  },
                 ),
               ],
             ),

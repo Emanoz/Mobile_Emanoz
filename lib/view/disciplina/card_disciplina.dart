@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:agenda_estudante/components/default_text_styles.dart';
 import 'package:agenda_estudante/model/disciplina.dart';
 import 'package:agenda_estudante/view/tarefa/card_tarefa.dart';
@@ -40,8 +42,8 @@ class CardDisciplina extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: Image.asset(
-                  'assets/${disciplina.imagem}',
+                child: Image.file(
+                  File(disciplina.imagem),
                   semanticLabel: disciplina.titulo,
                   fit: BoxFit.cover,
                   width: double.infinity,

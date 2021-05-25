@@ -5,6 +5,21 @@
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$DisciplinaController on _DisciplinaController, Store {
+  final _$imagemAtom = Atom(name: '_DisciplinaController.imagem');
+
+  @override
+  File get imagem {
+    _$imagemAtom.reportRead();
+    return super.imagem;
+  }
+
+  @override
+  set imagem(File value) {
+    _$imagemAtom.reportWrite(value, super.imagem, () {
+      super.imagem = value;
+    });
+  }
+
   final _$listDisciplinaAtom =
       Atom(name: '_DisciplinaController.listDisciplina');
 
@@ -35,9 +50,24 @@ mixin _$DisciplinaController on _DisciplinaController, Store {
     return _$insertAsyncAction.run(() => super.insert());
   }
 
+  final _$_DisciplinaControllerActionController =
+      ActionController(name: '_DisciplinaController');
+
+  @override
+  void updateImagem(File imagemNova) {
+    final _$actionInfo = _$_DisciplinaControllerActionController.startAction(
+        name: '_DisciplinaController.updateImagem');
+    try {
+      return super.updateImagem(imagemNova);
+    } finally {
+      _$_DisciplinaControllerActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''
+imagem: ${imagem},
 listDisciplina: ${listDisciplina}
     ''';
   }
