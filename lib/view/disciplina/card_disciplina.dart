@@ -47,6 +47,10 @@ class CardDisciplina extends StatelessWidget {
                   semanticLabel: disciplina.titulo,
                   fit: BoxFit.cover,
                   width: double.infinity,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Image.network(
+                        "https://cdn.neemo.com.br/uploads/settings_webdelivery/logo/3136/image-not-found.jpg");
+                  },
                 ),
               ),
               Padding(

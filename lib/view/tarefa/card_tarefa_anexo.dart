@@ -103,13 +103,18 @@ Future<Widget> _showAlertDialog(BuildContext context, int idArquivo) {
 
 Widget _item(BuildContext context, Arquivo arquivo) {
   return Container(
-      child: GestureDetector(
-    onTap: () async => await _showAlertDialog(context, arquivo.idArquivo),
-    child: Image.file(
-      File(arquivo.imagem),
-      //semanticLabel: disciplina.titulo,
-      fit: BoxFit.cover,
-      width: double.infinity,
+    child: GestureDetector(
+      onTap: () async => await _showAlertDialog(context, arquivo.idArquivo),
+      child: Image.file(
+        File(arquivo.imagem),
+        //semanticLabel: disciplina.titulo,
+        fit: BoxFit.cover,
+        width: double.infinity,
+        errorBuilder: (context, error, stackTrace) {
+          return Image.network(
+              "https://cdn.neemo.com.br/uploads/settings_webdelivery/logo/3136/image-not-found.jpg");
+        },
+      ),
     ),
-  ));
+  );
 }

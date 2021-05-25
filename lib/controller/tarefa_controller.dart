@@ -24,10 +24,8 @@ abstract class _TarefaController with Store {
 
   @action
   Future<void> findAllByDisciplina(int idDisciplina) async {
-    List<Tarefa> list = await dao.findAllByDisciplinaID(idDisciplina);
-    list.forEach((element) {
-      listTarefa.add(element);
-    });
+    listTarefa.clear();
+    listTarefa.addAll(await dao.findAllByDisciplinaID(idDisciplina));
   }
 
   @action
