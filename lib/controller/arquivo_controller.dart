@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:agenda_estudante/database/dao/arquivo_dao.dart';
 import 'package:agenda_estudante/model/arquivo.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:mobx/mobx.dart';
 
 part 'arquivo_controller.g.dart';
@@ -14,7 +15,7 @@ abstract class _ArquivoController with Store {
 
   final ArquivoDao dao = ArquivoDao();
 
-  File imagem;
+  PickedFile imagem;
 
   @observable
   ObservableList<Arquivo> listArquivos = ObservableList();

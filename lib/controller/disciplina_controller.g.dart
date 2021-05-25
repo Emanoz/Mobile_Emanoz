@@ -12,13 +12,13 @@ mixin _$DisciplinaController on _DisciplinaController, Store {
   final _$imagemAtom = Atom(name: '_DisciplinaController.imagem');
 
   @override
-  File get imagem {
+  PickedFile get imagem {
     _$imagemAtom.reportRead();
     return super.imagem;
   }
 
   @override
-  set imagem(File value) {
+  set imagem(PickedFile value) {
     _$imagemAtom.reportWrite(value, super.imagem, () {
       super.imagem = value;
     });
@@ -58,7 +58,7 @@ mixin _$DisciplinaController on _DisciplinaController, Store {
       ActionController(name: '_DisciplinaController');
 
   @override
-  void updateImagem(File imagemNova) {
+  void updateImagem(PickedFile imagemNova) {
     final _$actionInfo = _$_DisciplinaControllerActionController.startAction(
         name: '_DisciplinaController.updateImagem');
     try {

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:agenda_estudante/components/default_scaffold.dart';
 import 'package:agenda_estudante/components/default_text_field.dart';
 import 'package:agenda_estudante/controller/date_time_controller.dart';
@@ -67,8 +69,8 @@ class _CadastroDisciplinaState extends State<CadastroDisciplina> {
                 ),
                 TextButton(
                   onPressed: () async {
-                    widget.disciplinaController.updateImagem(
-                        await ImagePicker.pickImage(
+                    widget.disciplinaController.updateImagem(await ImagePicker()
+                        .getImage(
                             source: ImageSource.gallery, imageQuality: 50));
                   },
                   child: Text(
@@ -81,7 +83,7 @@ class _CadastroDisciplinaState extends State<CadastroDisciplina> {
                     return Container(
                       margin: EdgeInsets.all(16.0),
                       child: Image.file(
-                        widget.disciplinaController.imagem,
+                        File(widget.disciplinaController.imagem.path),
                         fit: BoxFit.cover,
                         width: double.infinity,
                         errorBuilder: (context, error, stackTrace) {

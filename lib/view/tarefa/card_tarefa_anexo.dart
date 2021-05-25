@@ -35,8 +35,8 @@ class _CardTarefaAnexoState extends State<CardTarefaAnexo> {
       appBarTitle: 'Anexos',
       hasFab: true,
       fabNavigation: () async {
-        controller.imagem = await ImagePicker.pickImage(
-            source: ImageSource.gallery, imageQuality: 50);
+        controller.imagem = await ImagePicker()
+            .getImage(source: ImageSource.gallery, imageQuality: 50);
         await controller.insert();
       },
       fabIcon: Icon(

@@ -153,13 +153,49 @@
     },
     {
       "name": "ffi",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-1.0.0",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-1.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "file",
       "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_core",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_core_platform_interface",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_core_web",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_messaging",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging-10.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_messaging_platform_interface",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging_platform_interface-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_messaging_web",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging_web-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -183,13 +219,19 @@
     },
     {
       "name": "flutter_plugin_android_lifecycle",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.11",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.2",
       "packageUri": "lib/",
-      "languageVersion": "2.1"
+      "languageVersion": "2.12"
     },
     {
       "name": "flutter_test",
       "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -206,6 +248,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "http",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "http_multi_server",
       "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/http_multi_server-2.2.0",
       "packageUri": "lib/",
@@ -219,15 +267,21 @@
     },
     {
       "name": "image_picker",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.6+5",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.7.5+3",
       "packageUri": "lib/",
-      "languageVersion": "2.1"
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "image_picker_for_web",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_for_web-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "image_picker_platform_interface",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-1.0.0",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.1.0",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.12"
     },
     {
       "name": "io",
@@ -297,7 +351,7 @@
     },
     {
       "name": "path_provider",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.1",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -315,7 +369,7 @@
     },
     {
       "name": "path_provider_platform_interface",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-2.0.0",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -339,9 +393,9 @@
     },
     {
       "name": "plugin_platform_interface",
-      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-1.0.3",
+      "rootUri": "file:///home/emanoz/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.1"
+      "languageVersion": "2.12"
     },
     {
       "name": "pool",
@@ -506,7 +560,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-05-24T22:00:46.024725Z",
+  "generated": "2021-05-25T23:16:37.910311Z",
   "generator": "pub",
   "generatorVersion": "2.13.0"
 }
