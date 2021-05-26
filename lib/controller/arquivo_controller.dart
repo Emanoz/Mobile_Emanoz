@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:agenda_estudante/database/dao/arquivo_dao.dart';
 import 'package:agenda_estudante/model/arquivo.dart';
 import 'package:image_picker/image_picker.dart';

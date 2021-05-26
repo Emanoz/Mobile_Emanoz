@@ -21,6 +21,8 @@ dependencies:
   firebase_core_platform_interface: ^4.0.1
   plugin_platform_interface: ^2.0.0
   image_picker_platform_interface: ^2.0.0
+  firebase_auth: ^1.2.0
+  firebase_dynamic_links: ^0.5.1
 
 dev_dependencies:
   flutter_test:

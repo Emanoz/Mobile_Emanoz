@@ -9,6 +9,7 @@ class DefaultScaffold extends StatelessWidget {
   final Function fabNavigation;
   final bool hasFab;
   final List<Widget> fabActions;
+  final bool hasLeading;
 
   DefaultScaffold(
       {this.appBarTitle = '',
@@ -17,13 +18,14 @@ class DefaultScaffold extends StatelessWidget {
       this.fabNavigation,
       this.appBarLeadingIcon,
       this.hasFab = true,
-      this.fabActions});
+      this.fabActions,
+      this.hasLeading = true});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: appBarLeadingIcon == null
+        leading: hasLeading == true
             ? IconButton(
                 icon: Icon(
                   Icons.keyboard_arrow_left,

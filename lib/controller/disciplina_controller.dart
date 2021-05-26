@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:agenda_estudante/database/dao/disciplina_dao.dart';
 import 'package:agenda_estudante/model/disciplina.dart';
 import 'package:flutter/cupertino.dart';

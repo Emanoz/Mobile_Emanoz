@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "450350437267",
+    "project_id": "agenda-591b8",
+    "storage_bucket": "agenda-591b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450350437267:android:f53e4af986af44c1e30e66",
+        "android_client_info": {
+          "package_name": "com.example.agenda_estudante"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450350437267-shve4thvg3ltg0jb1mv9bd1m0mgumu81.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRjj7piBhe5w-t0r2F2RWOCmtZmHN5G4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450350437267-shve4thvg3ltg0jb1mv9bd1m0mgumu81.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

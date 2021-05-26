@@ -8,6 +8,7 @@ class DefaultTextField extends StatelessWidget {
   final int maxLines;
   final Function onTap;
   final TextInputType keyboardType;
+  final bool obscureText;
 
   DefaultTextField(
       {@required this.labelText,
@@ -16,13 +17,15 @@ class DefaultTextField extends StatelessWidget {
       this.maxLength = 40,
       this.maxLines = 1,
       this.onTap,
-      this.keyboardType});
+      this.keyboardType,
+      this.obscureText = false});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 16, right: 16, top: 16),
       child: TextFormField(
+        obscureText: obscureText,
         maxLength: maxLength,
         maxLines: maxLines,
         decoration: InputDecoration(
