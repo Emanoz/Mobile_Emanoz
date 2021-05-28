@@ -28,8 +28,8 @@ abstract class _DisciplinaController with Store {
 
   @action
   Future<void> findAll() async {
-    List<Disciplina> list = await dao.findAll();
-    listDisciplina = ObservableList.of(list);
+    listDisciplina.clear();
+    listDisciplina.addAll(await dao.findAll());
   }
 
   @action

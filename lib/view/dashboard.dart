@@ -9,17 +9,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 class Dashboard extends StatefulWidget {
-  final DisciplinaController controller = DisciplinaController();
-
   @override
   _DashboardState createState() => _DashboardState();
 }
 
 class _DashboardState extends State<Dashboard> {
+  final DisciplinaController controller = DisciplinaController();
+
   @override
   void initState() {
+    updateWidgets();
     super.initState();
-    widget.controller.findAll();
     final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
     _firebaseMessaging.getToken().then((value) => print(value));
   }
@@ -34,9 +34,9 @@ class _DashboardState extends State<Dashboard> {
       body: Observer(
         builder: (_) {
           return ListView.builder(
-              itemCount: widget.controller.listDisciplina.length,
+              itemCount: controller.listDisciplina.length,
               itemBuilder: (_, index) {
-                var list = widget.controller.listDisciplina;
+                var list = controller.listDisciplina;
                 Disciplina disciplina = list[index];
                 return CardDisciplina(disciplina);
               });
@@ -46,8 +46,14 @@ class _DashboardState extends State<Dashboard> {
         Icons.add,
         size: 50.0,
       ),
-      fabNavigation: () => Navigator.push(context,
-          MaterialPageRoute(builder: (context) => CadastroDisciplina())),
+      fabNavigation: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => CadastroDisciplina(controller))),
     );
+  }
+
+  void updateWidgets() async {
+    await controller.findAll();
   }
 }

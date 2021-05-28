@@ -9,9 +9,9 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 class CadastroTarefa extends StatefulWidget {
   final DateTimeController datetimeController = DateTimeController();
   final DropDownController dropDownController = DropDownController();
-  final TarefaController tarefaController = TarefaController();
+  final TarefaController tarefaController;
 
-  CadastroTarefa(int idDisciplina) {
+  CadastroTarefa(int idDisciplina, this.tarefaController) {
     this.tarefaController.idDisciplina.text = idDisciplina.toString();
   }
 

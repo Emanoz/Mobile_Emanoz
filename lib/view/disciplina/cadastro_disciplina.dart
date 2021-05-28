@@ -10,7 +10,9 @@ import 'package:image_picker/image_picker.dart';
 
 class CadastroDisciplina extends StatefulWidget {
   final DateTimeController dateTimeController = DateTimeController();
-  final DisciplinaController disciplinaController = DisciplinaController();
+  final DisciplinaController disciplinaController;
+
+  CadastroDisciplina(this.disciplinaController);
 
   @override
   _CadastroDisciplinaState createState() => _CadastroDisciplinaState();

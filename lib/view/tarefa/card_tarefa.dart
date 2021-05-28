@@ -9,7 +9,6 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 
 class CardTarefa extends StatefulWidget {
   final Disciplina disciplina;
-  final TarefaController controller = TarefaController();
 
   CardTarefa(this.disciplina);
 
@@ -18,10 +17,12 @@ class CardTarefa extends StatefulWidget {
 }
 
 class _CardTarefaState extends State<CardTarefa> {
+  final TarefaController controller = TarefaController();
+
   @override
   void initState() {
     super.initState();
-    widget.controller.findAllByDisciplina(widget.disciplina.idDisciplina);
+    controller.findAllByDisciplina(widget.disciplina.idDisciplina);
   }
 
   @override
@@ -32,7 +33,7 @@ class _CardTarefaState extends State<CardTarefa> {
           context,
           MaterialPageRoute(
               builder: (context) =>
-                  CadastroTarefa(widget.disciplina.idDisciplina))),
+                  CadastroTarefa(widget.disciplina.idDisciplina, controller))),
       fabIcon: Icon(
         Icons.add,
         size: 50,
@@ -40,9 +41,9 @@ class _CardTarefaState extends State<CardTarefa> {
       body: Observer(
         builder: (context) {
           return ListView.builder(
-            itemCount: widget.controller.listTarefa.length,
+            itemCount: controller.listTarefa.length,
             itemBuilder: (_, index) {
-              Tarefa tarefa = widget.controller.listTarefa[index];
+              Tarefa tarefa = controller.listTarefa[index];
               return CardTarefaItem(tarefa);
             },
           );
