@@ -1,4 +1,3 @@
-import 'package:agenda_estudante/view/dashboard.dart';
 import 'package:agenda_estudante/view/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
