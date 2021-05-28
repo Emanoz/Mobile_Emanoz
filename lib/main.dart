@@ -22,7 +22,7 @@ class _AppState extends State<App> {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
-            home: Dashboard(),
+            home: LoginAndRegisterPage(),
             theme: ThemeData(
               brightness: Brightness.light,
               primaryColor: Colors.purple,
