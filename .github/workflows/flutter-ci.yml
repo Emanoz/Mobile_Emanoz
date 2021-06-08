@@ -8,7 +8,7 @@ on:
     - master
     
 jobs:
-  build:
+  build-and-deploy:
     # Este 'job' rodará numa máquina virtual baseada em Ubuntu
     runs-on: ubuntu-latest
     steps:
@@ -32,3 +32,12 @@ jobs:
     
     # Analisa o código em Dart
     - run: flutter analyze .
+    
+    # Step para buildar o projeto e gerar o apk
+    -run: ./gradlew assembleDebug 
+    
+    # Step para salvar a apk como Artifacts
+    -uses: actions/upload-artifact@v1
+    with:
+    name: app
+    path: app/build/outputs/apk/debug/app-debug.apk
