@@ -1,6 +1,6 @@
 name: Flutter-CI
 
-# Este 'workflow' é acionado nas submissões dos código para o repositório. 
+# Este 'workflow' é acionado na submissões dos código para o repositório. 
 
 on:
   push:
